@@ -5,7 +5,7 @@
     'category': 'Services',
     'author': 'Your Name',
     'license': 'LGPL-3',
-    'depends': ['base'],
+    'depends': ['base','mail'],
     'data': [
         'security/ir.model.access.csv',
         'views/custom_task_views.xml',
