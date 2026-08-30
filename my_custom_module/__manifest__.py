@@ -4,6 +4,7 @@
     'summary': 'Manage custom tasks in Odoo 19',
     'category': 'Services',
     'author': 'Your Name',
+    'license': 'LGPL-3',
     'depends': ['base'],
     'data': [
         'security/ir.model.access.csv',

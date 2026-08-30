@@ -1,6 +1,6 @@
 from odoo import models,fields
 class CustomTask(models.Model):
-    _name = "custom_task"
+    _name = "custom.task"
     _description = "Custom Task Manager"
 
     name = fields.Char(string='Task Title', required=True)
