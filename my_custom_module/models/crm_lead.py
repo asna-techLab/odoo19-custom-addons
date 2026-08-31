@@ -7,7 +7,7 @@ class CrmLead(models.Model):
     @api.model
     def _cron_send_daily_lead_summary(self):
         today_start = datetime.datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-        new_leads = self.search([('create_date', '>=', today_start)])
+        new_leads = self.sudo().search([('create_date', '>=', today_start)])
 
         if new_leads:
             lead_rows = "".join([
@@ -21,7 +21,7 @@ class CrmLead(models.Model):
             <ul>{lead_rows}</ul>
             """
 
-            self.env['mail.mail'].create({
+            self.env['mail.mail'].sudo().create({
                 'subject': f"Daily Lead Summary ({fields.Date.today()})",
                 'body_html': body_html,
                 'email_to': 'sales_manager@example.com',
