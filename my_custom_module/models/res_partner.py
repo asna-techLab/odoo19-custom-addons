@@ -12,7 +12,7 @@ class ResPartner(models.Model):
         # Post the welcome message to the Chatter for each newly created partner
         for record in records:
             record.message_post(
-                body="<p><strong>Welcome!</strong> A new contact profile has been successfully created.</p>",
+                body="Welcome!..... A new contact profile has been successfully created.",
                 message_type="comment",
                 subtype_xmlid="mail.mt_note"
             )
